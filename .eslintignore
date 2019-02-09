@@ -1,0 +1,6 @@
+coverage
+ios
+android
+fastlane
+web/admin/build
+web/admin/node_modules
