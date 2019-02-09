@@ -7,32 +7,12 @@
  * @lint-ignore-every XPLATJSCOPYRIGHT1
  */
 
-import React, { Component } from "react";
-import { StyleSheet } from "react-native";
-import AppNavigator from "./src/navigation";
+import React, { Component } from 'react';
+import AppNavigator from './src/navigation';
 
-type Props = {};
-export default class App extends Component<Props> {
+type PropsType = {};
+export default class App extends Component<PropsType> {
   render() {
     return <AppNavigator />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  }
-});

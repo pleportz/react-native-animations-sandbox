@@ -1,13 +1,7 @@
 // @flow
-import React, { PureComponent } from "react";
-import {
-  StyleSheet,
-  View,
-  ActivityIndicator,
-  Text,
-  TouchableOpacity
-} from "react-native";
-import theme from "../../theme";
+import React, { PureComponent } from 'react';
+import { StyleSheet, View, ActivityIndicator, Text, TouchableOpacity } from 'react-native';
+import theme from '../../theme';
 
 type PropsType = {
   backgroundColor?: string,
@@ -18,7 +12,7 @@ type PropsType = {
   onPress?: () => void,
   disabled?: boolean,
   isLoading?: boolean,
-  loaderColor?: string
+  loaderColor?: string,
 };
 
 const BUTTON_HEIGHT = 40;
@@ -34,7 +28,7 @@ export class Button extends PureComponent<PropsType> {
       disabled,
       onPress,
       isLoading,
-      loaderColor
+      loaderColor,
     } = this.props;
 
     const isDisabled = disabled || isLoading || !onPress;
@@ -46,12 +40,11 @@ export class Button extends PureComponent<PropsType> {
           style,
           backgroundColor && { backgroundColor },
           disabled && styles.disabled,
-          borderColor && { borderColor, borderWidth: 1 }
+          borderColor && { borderColor, borderWidth: 1 },
         ]}
         disabled={isDisabled}
         onPress={onPress}
-        activeOpacity={0.7}
-      >
+        activeOpacity={0.7}>
         {text && (
           <View style={styles.textContainer}>
             {isLoading ? (
@@ -68,22 +61,22 @@ export class Button extends PureComponent<PropsType> {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     height: BUTTON_HEIGHT,
     borderRadius: BUTTON_HEIGHT / 2,
     backgroundColor: theme.colors.blue,
     paddingVertical: 0,
-    paddingHorizontal: BUTTON_HEIGHT / 2
+    paddingHorizontal: BUTTON_HEIGHT / 2,
   },
   text: {
-    color: theme.colors.white
+    color: theme.colors.white,
   },
   textContainer: {
     flex: 1,
-    alignItems: "center"
+    alignItems: 'center',
   },
   disabled: {
-    backgroundColor: theme.colors.lightGrey
-  }
+    backgroundColor: theme.colors.lightGrey,
+  },
 });
