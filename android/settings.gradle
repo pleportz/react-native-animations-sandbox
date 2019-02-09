@@ -1,0 +1,3 @@
+rootProject.name = 'animationsandbox'
+
+include ':app'
