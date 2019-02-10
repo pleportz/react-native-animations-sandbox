@@ -3,14 +3,23 @@ import * as Pages from '../pages/index';
 
 const AppNavigator = createStackNavigator(
   {
-    ExperimentWithAnimated: {
-      screen: Pages.ExperimentWithAnimated,
+    ExperimentWithAnimatedTiming: {
+      screen: Pages.ExperimentWithAnimatedTiming,
       navigationOptions: {
-        title: 'Experiments with react-native Animated',
+        title: 'Animated.timing',
+      },
+    },
+    ExperimentWithAnimatedSpring: {
+      screen: Pages.ExperimentWithAnimatedSpring,
+      navigationOptions: {
+        title: 'Animated.spring',
       },
     },
     Home: {
       screen: Pages.Home,
+      navigationOptions: {
+        title: 'My react-native animation sandbox',
+      },
     },
   },
   {

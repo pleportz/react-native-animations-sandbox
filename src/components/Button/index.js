@@ -44,7 +44,8 @@ export class Button extends PureComponent<PropsType> {
         ]}
         disabled={isDisabled}
         onPress={onPress}
-        activeOpacity={0.7}>
+        activeOpacity={0.7}
+      >
         {text && (
           <View style={styles.textContainer}>
             {isLoading ? (

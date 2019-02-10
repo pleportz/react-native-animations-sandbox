@@ -6,9 +6,9 @@ import theme from '../../theme';
 
 type PropsType = {};
 
-const initialDiameter = 48;
+const initialDiameter = 16;
 
-class ExperimentWithAnimated extends PureComponent<PropsType> {
+class ExperimentWithAnimatedSpring extends PureComponent<PropsType> {
   state = {
     animatedDiameter: new Animated.Value(initialDiameter),
   };
@@ -16,9 +16,10 @@ class ExperimentWithAnimated extends PureComponent<PropsType> {
   animatedRadius = Animated.divide(this.state.animatedDiameter, 2);
 
   componentDidMount() {
-    Animated.timing(this.state.animatedDiameter, {
+    Animated.spring(this.state.animatedDiameter, {
       toValue: 120,
-      duration: 1500,
+      friction: 2,
+      tension: 10,
       // useNativeDriver: true, // currently width and height cannot be animated with useNativeDriver: true
     }).start();
   }
@@ -54,4 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ExperimentWithAnimated;
+export default ExperimentWithAnimatedSpring;
