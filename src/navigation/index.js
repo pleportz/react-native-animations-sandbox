@@ -5,6 +5,9 @@ const AppNavigator = createStackNavigator(
   {
     ExperimentWithAnimated: {
       screen: Pages.ExperimentWithAnimated,
+      navigationOptions: {
+        title: 'Experiments with react-native Animated',
+      },
     },
     Home: {
       screen: Pages.Home,
