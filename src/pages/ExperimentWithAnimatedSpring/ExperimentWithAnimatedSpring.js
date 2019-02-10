@@ -3,6 +3,7 @@
 import React, { PureComponent } from 'react';
 import { Animated, View, StyleSheet } from 'react-native';
 import theme from '../../theme';
+import { catImageUrl } from '../../config';
 
 type PropsType = {};
 
@@ -37,6 +38,14 @@ class ExperimentWithAnimatedSpring extends PureComponent<PropsType> {
             },
           ]}
         />
+        <Animated.Image
+          source={{ uri: catImageUrl }}
+          style={{
+            width: this.state.animatedDiameter,
+            height: this.state.animatedDiameter,
+            borderRadius: this.animatedRadius,
+          }}
+        />
       </View>
     );
   }
@@ -46,7 +55,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   baseCircleStyle: {
     backgroundColor: theme.colors.white,
